@@ -1,54 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Damián Paranič</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QMRCD5N34"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <link
+      rel="stylesheet"
+      href="https://fonts.bunny.net/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="sun"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
 
-    gtag('config', 'G-1QMRCD5N34');
-    </script>
-</head>
-<body>
-    <main>
-        <div class="container">
-            <div class="row min-vh-100">
-                <div class="photo col-lg-6">
-                    <img src="./profile.png" alt="profile-picture">
-                </div>
-                <div class="info col-lg-6 py-5 d-flex flex-column justify-content-center">
-                    <h1>Hi, I'm Damián Paranič</h1>
-                    <ul>
-                        <li>From Svidník, Slovak republic 🏠</li>
-                        <li>Student at <a href="https://fi.muni.cz" target="blank">FI MUNI - Brno, Czech republic</a> 📚</li>
-                        <li>Software Engineer at <a href="https://bluelemons.sk/" target="blank">Blue Lemons</a> 👨‍💻</li>
-                        <li>Musician - piano 🎹</li>
-                    </ul>
-                    <div class="links d-flex justify-content-evenly">
-                        <a href="mailto:damuso15@gmail.com" target="blank" class="link">
-                            email
-                        </a>
-                        <a href="https://github.com/damuso" target="blank" class="link">
-                            github
-                        </a>
-                        <a href="https://linkedin.com/in/damianparanic" target="blank" class="link">
-                            linkedin
-                        </a>
-                        <a href="https://instagram.com/damianparanic" target="blank" class="link">
-                            instagram
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <header>
+        <div class="photo-container">
+          <img
+            src="profile.png"
+            alt="Damián Paranič"
+            class="photo"
+            id="profile-photo"
+          />
+          <div class="no-photo" id="no-photo" style="display: none"></div>
         </div>
-    </main>
-</body>
+        <h1 class="name">Damián Paranič</h1>
+        <div class="roles">
+          <span class="role">Software Engineer</span>
+          <span class="role">Student</span>
+          <span class="role">Musician</span>
+        </div>
+      </header>
+
+      <div class="terminal">
+        <div class="terminal-content" id="terminal-text"></div>
+        <span class="cursor"></span>
+      </div>
+
+      <div class="social-links">
+        <a href="mailto:damuso15@gmail.com" class="social-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="M22 7l-10 7L2 7"></path>
+          </svg>
+          <span>Email</span>
+        </a>
+        <a href="https://github.com/damuso" target="_blank" class="social-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            ></path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a
+          href="https://linkedin.com/in/damianparanic"
+          target="_blank"
+          class="social-link"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <a
+          href="https://instagram.com/damianparanic"
+          target="_blank"
+          class="social-link"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+
+      <!-- <footer>
+        <p>© 2025 Damián Paranič | Designed with code and creativity</p>
+      </footer> -->
+    </div>
+
+    <script>
+      const rawText = `const myself = {
+    name: 'Damián Paranič',
+    roles: ['Software Engineer 👨🏻‍💻', 'Student 👨🏻‍🎓', 'Musician 🎹'],
+    location: {
+        home: 'Svidník, Slovak Republic',
+        current: 'Brno, Czech Republic'
+    },
+    education: {
+        institution: 'FI MUNI',
+        location: 'Brno, Czech Republic',
+        website: 'fi.muni.cz'
+    },
+    work: {
+        company: 'Blue Lemons',
+        role: 'Software Engineer',
+        website: 'bluelemons.sk'
+    },
+    music: ['Piano', 'Guitar']
+};`;
+
+      function formatWithSyntaxHighlighting(text) {
+        text = text.replace(
+          /\b(const|var|let|function)\b/g,
+          '<span class="terminal-keyword">$1</span>'
+        );
+
+        text = text.replace(
+          /\b(const|var|let)\b\s+(\w+)/g,
+          '<span class="terminal-keyword">$1</span> <span class="terminal-variable">$2</span>'
+        );
+
+        text = text.replace(/(\w+):/g, '<span class="terminal-key">$1</span>:');
+
+        text = text.replace(
+          /'([^']+)'/g,
+          "<span class=\"terminal-string\">'$1'</span>"
+        );
+
+        text = text.replace(/\[|\]/g, function (match) {
+          return '<span class="terminal-bracket">' + match + "</span>";
+        });
+
+        text = text.replace(/{|}/g, function (match) {
+          return '<span class="terminal-bracket">' + match + "</span>";
+        });
+
+        text = text.replace(
+          /'fi\.muni\.cz'/g,
+          "<span class=\"terminal-string\"><a href='https://fi.muni.cz' target='_blank' class='terminal-link'>'fi.muni.cz'</a></span>"
+        );
+
+        text = text.replace(
+          /'bluelemons\.sk'/g,
+          "<span class=\"terminal-string\"><a href='https://bluelemons.sk' target='_blank' class='terminal-link'>'bluelemons.sk'</a></span>"
+        );
+
+        return text;
+      }
+
+      const textElement = document.getElementById("terminal-text");
+
+      function typeWriter(currentPos = 0) {
+        if (currentPos < rawText.length) {
+          const char = rawText.charAt(currentPos);
+          const currentText = rawText.substring(0, currentPos + 1);
+
+          textElement.innerHTML = formatWithSyntaxHighlighting(currentText);
+
+          let typeSpeed = 5;
+          if (char === " ") typeSpeed = 10;
+          if (char === "\n") typeSpeed = 15;
+          if (char === "{" || char === "}") typeSpeed = 20;
+
+          setTimeout(() => {
+            typeWriter(currentPos + 1);
+          }, typeSpeed);
+        }
+      }
+
+      window.onload = function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          textElement.innerHTML = formatWithSyntaxHighlighting(rawText);
+        } else {
+          typeWriter();
+        }
+      };
+
+      // Theme settings
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      const savedTheme = localStorage.getItem("theme") || "light";
+      if (savedTheme === "dark") {
+        body.setAttribute("data-theme", "dark");
+        updateThemeIcon("dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        body.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === "dark") {
+          themeToggle.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        `;
+        } else {
+          themeToggle.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        `;
+        }
+      }
+
+      // Handle profile photo error
+      const profilePhoto = document.getElementById("profile-photo");
+      const noPhoto = document.getElementById("no-photo");
+
+      profilePhoto.addEventListener("error", function () {
+        profilePhoto.style.display = "none";
+        noPhoto.style.display = "flex";
+      });
+    </script>
+  </body>
 </html>
