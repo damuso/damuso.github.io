@@ -55,7 +55,7 @@
         <h1 class="name">Damián Paranič</h1>
         <div class="roles">
           <span class="role">Software Engineer</span>
-          <span class="role">Student</span>
+          <!--<span class="role">Student</span>-->
           <span class="role">Musician</span>
         </div>
       </header>
@@ -157,20 +157,22 @@
     <script>
       const rawText = `const myself = {
     name: 'Damián Paranič',
-    roles: ['Software Engineer 👨🏻‍💻', 'Student 👨🏻‍🎓', 'Musician 🎹'],
+    roles: ['Software Engineer 👨🏻‍💻', 'Musician 🎹'],
     location: 'Brno, Czech Republic',
     education: {
         institution: 'Faculty of Informatics, Masaryk University',
         field: 'Software Engineering',
         website: 'fi.muni.cz'
     },
-    work: {
-        company: 'Blue Lemons s.r.o., Košice',
-        role: 'Software Engineer',
-        website: 'bluelemons.sk'
-    },
-    music: ['Piano', 'Guitar']
+    music: ['Piano', '(Bass) Guitar',']
 };`;
+    //work: {
+      //  company: 'Blue Lemons s.r.o., Košice',
+        //role: 'Software Engineer',
+        //website: 'bluelemons.sk'
+    //},
+    //music: ['Piano', 'Guitar']
+//};`;
 
       function formatWithSyntaxHighlighting(text) {
         text = text.replace(
